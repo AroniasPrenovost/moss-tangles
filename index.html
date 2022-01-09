@@ -75,7 +75,7 @@
                                    <div class="col-md-8 col-sm-12">
                                         <h3>Created using native mosses, roots and pebbles...</h3>
                                         <h1>For every experience</h1>
-                                        <a href="#shop" class="section-btn btn btn-default smoothScroll">See Tangles</a>
+                                        <a href="#shop" id="shopp" class="section-btn btn btn-default smoothScroll">See Tangles</a>
                                    </div>
                               </div>
                          </div>
@@ -86,7 +86,7 @@
                                    <div class="col-md-8 col-sm-12">
                                         <h3>Easy-going care and nourishment to maintain...</h3>
                                         <h1>A flourishing indoor garden!</h1>
-                                        <a href="#creations" style="background-color:#77815c" class="section-btn btn btn-default smoothScroll">Discover tangles</a>
+                                        <a href="#creations" id="creationss" style="background-color:#77815c" class="section-btn btn btn-default smoothScroll">Discover tangles</a>
                                    </div>
                               </div>
                          </div>
@@ -502,8 +502,16 @@
           document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
      })
 
-     document.getElementById('signup2   ').addEventListener('click', function() {
+     document.getElementById('signup2').addEventListener('click', function() {
           document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
+     })
+
+          document.getElementById('shopp').addEventListener('click', function() {
+          document.getElementById('shop').scrollIntoView({ behavior: "smooth" });
+     })
+
+          document.getElementById('creationss').addEventListener('click', function() {
+          document.getElementById('creations').scrollIntoView({ behavior: "smooth" });
      })
 
  </script>
