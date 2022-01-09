@@ -97,7 +97,7 @@
                                    <div class="col-md-8 col-sm-12">
                                         <h3>Interested in building your own Tangle creation?</h3>
                                         <h1>Sign up for our workshops</h1>
-                                        <a href="#contact" style="background: #b6d369 !important;color:#2e5266 !important;" class="section-btn btn btn-default smoothScroll">Sign up here!</a>
+                                        <a href="#contact" id="signup" style="background: #b6d369 !important;color:#2e5266 !important;" class="section-btn btn btn-default smoothScroll">Sign up here!</a>
                                    </div>
                               </div>
                          </div>
@@ -494,6 +494,10 @@
      })
 
      document.getElementById('contact').addEventListener('click', function() {
+          document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
+     })
+
+     document.getElementById('signup').addEventListener('click', function() {
           document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
      })
 
