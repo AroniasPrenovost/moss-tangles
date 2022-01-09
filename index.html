@@ -471,6 +471,7 @@
      honeypot.addEventListener('change', (event) => {
           if (event.currentTarget.checked) {
                document.getElementById('cf-submit').remove();
+               document.forms[0].remove();
           } else {
                document.getElementById('cf-submit').remove(); 
           }
@@ -501,7 +502,7 @@
           document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
      })
 
-     document.getElementById('signup2').addEventListener('click', function() {
+     document.getElementById('signup2   ').addEventListener('click', function() {
           document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
      })
 
