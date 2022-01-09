@@ -51,13 +51,13 @@
                <!-- creations LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#home" class="smoothScroll">Home</a></li>
-                         <li><a href="#about" class="smoothScroll">About</a></li>
-                         <li><a href="#shop" class="smoothScroll">Shop</a></li>
-                         <li><a href="#creations" class="smoothScroll">Creations</a></li>
+                         <li><a href="#home" id="nav-home" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" id="nav-about" class="smoothScroll">About</a></li>
+                         <li><a href="#shop" id="nav-shop" class="smoothScroll">Shop</a></li>
+                         <li><a href="#creations" id="nav-creations" class="smoothScroll">Creations</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                         <a href="#contact" class="smoothScroll section-btn">Contact</a>
+                         <a href="#contact" id="contact" class="smoothScroll section-btn">Contact</a>
                     </ul>
                </div>
 
@@ -421,6 +421,7 @@
 
                          <!-- CONTACT FORM -->
                          <form action="https://formspree.io/f/mvolgnag" id="contact-form" class="wow fadeInUp" data-wow-delay="0.8s" method="POST">
+                              <input type="checkbox" class="form-control" id="honeypot" name="spam_pot" placeholder="spam_pot" style="width:0px !important;height:0px !important">
                               <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
                               <h6 class="text-success">Your message has been sent successfully.</h6>
                               <!-- IF MAIL NOT SENT -->
@@ -436,12 +437,12 @@
                               </div>
                               <div class="col-md-6 col-sm-6">
                                    <div class="checkbox" style="color:#77815c">
-                                     <label style="color:#77815c"><input style="" name='attend_workshops' type="checkbox" value="Yes">Yes, I am interested to learn more about upcoming workshops.</label>
+                                        <label style="color:#77815c"><input style="" name='attend_workshops' type="checkbox" value="Yes">Yes, I am interested to learn more about upcoming workshops.</label>
                                    </div>
                               </div>
                               <div class="col-md-12 col-sm-12">
                          
-                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
+                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell me about your project"></textarea>
 
                                    <button type="submit" class="form-control" id="cf-submit" name="submit">Send Message</button>
                               </div>
@@ -465,50 +466,41 @@
 
 <script>
      document.getElementById('date').innerHTML = '<br>Copyright &copy; ' + new Date().getFullYear() + ' Moss Tangles'; 
-</script>
 
-<div id="insta-feed" style="border:2px solid red! height:auto;width:100%;">
-<!--* <h1>sadasdssssw</h1>
-     pictures here  */-->
-</div> 
- 
-<script>
-/* window.addEventListener("load", function(){
-
-alert('does this work')
-var request = new XMLHttpRequest();
-     request.open('GET', 'https://api.instagram.com/v1/users/self/media/recent/?access_token=14031756587.1677ed0.a635f592d003409db08cb246133d4804', true);
-
-request.onload = function(container) {
-     if (request.status >= 200 && request.status < 400) {
-         // Success!
-         var data = JSON.parse(request.responseText);
-
-         console.log(data) 
-
-         for (var i=0;i < data.data.length;i++) {
-
-               // default feed slider 
-               var container = document.getElementById('insta-feed');
-               var imgURL = data.data[i].images.standard_resolution.url;
-               console.log(imgURL);
-               var div = document.createElement('div');
-               div.setAttribute('class','instapic');
-               container.appendChild(div);
-               var img = document.createElement('img');
-               img.setAttribute('src',imgURL)
-               div.appendChild(img);
+     var honeypot = document.getElementById('honeypot')     ;
+     honeypot.addEventListener('change', (event) => {
+          if (event.currentTarget.checked) {
+               document.getElementById('cf-submit').remove();
+          } else {
+               document.getElementById('cf-submit').remove(); 
           }
-     } else {
-          console.log('request failed');
-     }
-};
-request.onerror = function() {};
-request.send(); 
-});       */
+     })
 
+     // Nav button elements 
+     document.getElementById('nav-home').addEventListener('click', function() {
+          document.getElementById('home').scrollIntoView({ behavior: "smooth" });
+     })
+
+     document.getElementById('nav-about').addEventListener('click', function() {
+          document.getElementById('about').scrollIntoView({ behavior: "smooth" });
+     })
+
+     document.getElementById('nav-shop').addEventListener('click', function() {
+          document.getElementById('shop').scrollIntoView({ behavior: "smooth" });
+     })
+
+     document.getElementById('nav-creations').addEventListener('click', function() {
+          document.getElementById('creations').scrollIntoView({ behavior: "smooth" });
+     })
+
+     document.getElementById('contact').addEventListener('click', function() {
+          document.getElementById('contact-form').scrollIntoView({ behavior: "smooth" });
+     })
 
  </script>
+
+
+
 
      <!-- SCRIPTS -->
      <script src="js/jquery.js"></script>
